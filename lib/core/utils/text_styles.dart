@@ -61,5 +61,5 @@ double getResoponsiveFontSize(BuildContext context,
 double getScaleFactor(BuildContext context) {
   double width = MediaQuery.sizeOf(context).width;
 
-  return width / 400;
+  return width / 370;
 }

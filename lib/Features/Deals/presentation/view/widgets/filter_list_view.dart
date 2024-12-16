@@ -17,7 +17,7 @@ class FilterListViewState extends State<FilterListView> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.sizeOf(context).height * .090,
+      height: MediaQuery.sizeOf(context).height * .083,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: widget.filters.length,

@@ -20,6 +20,7 @@ class DealsItemBody extends StatelessWidget {
           const Image(
             image: AssetImage(Assets.imagesBag),
             fit: BoxFit.cover,
+            width: double.infinity,
           ),
           Positioned(
             bottom: -20,
