@@ -6,6 +6,9 @@ class DealsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const DealsViewBody();
+    return const Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(child: DealsViewBody()),
+    );
   }
 }
