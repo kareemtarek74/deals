@@ -17,7 +17,7 @@ class FilterListViewState extends State<FilterListView> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.sizeOf(context).height * .083,
+      height: MediaQuery.sizeOf(context).height * .060,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: widget.filters.length,
@@ -29,44 +29,46 @@ class FilterListViewState extends State<FilterListView> {
                 selectedIndex = index;
               });
             },
-            child: AnimatedContainer(
-              clipBehavior: Clip.none,
-              duration: const Duration(milliseconds: 200),
-              margin: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 2),
-              padding: EdgeInsets.symmetric(
-                  horizontal: widget.horizontalPadding, vertical: 18.5),
-              decoration: BoxDecoration(
-                boxShadow: isActive
-                    ? null
-                    : const [
-                        BoxShadow(
-                          color: Color(0x0F000080),
-                          blurRadius: 4,
-                          offset: Offset(0, 4),
-                          spreadRadius: 0,
-                        ),
-                        BoxShadow(
-                          color: Color(0x0F000080),
-                          blurRadius: 2,
-                          offset: Offset(0, 4),
-                          spreadRadius: 0,
-                        )
-                      ],
-                color: isActive ? const Color(0xFFF1F4FF) : Colors.white,
-                borderRadius: BorderRadius.circular(12.0),
-                border: Border.all(
-                  width: 1,
-                  color: isActive
-                      ? const Color(0xFF1007FA)
-                      : const Color(0xffE5E8FF),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 16),
+              child: AnimatedContainer(
+                clipBehavior: Clip.none,
+                duration: const Duration(milliseconds: 200),
+                padding: EdgeInsets.symmetric(
+                    horizontal: widget.horizontalPadding, vertical: 10.5),
+                decoration: BoxDecoration(
+                  boxShadow: isActive
+                      ? null
+                      : const [
+                          BoxShadow(
+                            color: Color(0x0F000080),
+                            blurRadius: 4,
+                            offset: Offset(0, 4),
+                            spreadRadius: 0,
+                          ),
+                          BoxShadow(
+                            color: Color(0x0F000080),
+                            blurRadius: 2,
+                            offset: Offset(0, 4),
+                            spreadRadius: 0,
+                          )
+                        ],
+                  color: isActive ? const Color(0xFFF1F4FF) : Colors.white,
+                  borderRadius: BorderRadius.circular(12.0),
+                  border: Border.all(
+                    width: 1,
+                    color: isActive
+                        ? const Color(0xFF1007FA)
+                        : const Color(0xffE5E8FF),
+                  ),
                 ),
+                child: Text(widget.filters[index],
+                    style: isActive
+                        ? Styles.styleBold16(context)
+                            .copyWith(color: const Color(0xFF1007FA))
+                        : Styles.styleRegular16(context).copyWith(
+                            color: Colors.black, fontWeight: FontWeight.w500)),
               ),
-              child: Text(widget.filters[index],
-                  style: isActive
-                      ? Styles.styleBold16(context)
-                          .copyWith(color: const Color(0xFF1007FA))
-                      : Styles.styleRegular16(context).copyWith(
-                          color: Colors.black, fontWeight: FontWeight.w500)),
             ),
           );
         },

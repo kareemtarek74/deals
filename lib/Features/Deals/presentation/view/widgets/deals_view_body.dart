@@ -15,6 +15,7 @@ class DealsViewBody extends StatelessWidget {
     return Stack(
       children: [
         const CustomScrollView(
+          clipBehavior: Clip.none,
           slivers: [
             SliverToBoxAdapter(
               child: Column(

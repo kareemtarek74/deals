@@ -52,7 +52,7 @@ double getResoponsiveFontSize(BuildContext context,
   double scaleFactor = getScaleFactor(context);
   double responsiveFotSize = fontSize * scaleFactor;
 
-  double lowerLimit = fontSize * .8;
+  double lowerLimit = fontSize * .6;
   double upperLimit = fontSize * 1.2;
 
   return responsiveFotSize.clamp(lowerLimit, upperLimit);
