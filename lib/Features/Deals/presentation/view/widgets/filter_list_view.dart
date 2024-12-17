@@ -30,7 +30,7 @@ class FilterListViewState extends State<FilterListView> {
               });
             },
             child: Padding(
-              padding: const EdgeInsets.only(left: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 8),
               child: AnimatedContainer(
                 clipBehavior: Clip.none,
                 duration: const Duration(milliseconds: 200),
